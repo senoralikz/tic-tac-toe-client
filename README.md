@@ -7,7 +7,7 @@
 ### Development Process
 
 ### Wireframe and User Stories
-![alt text](https://i.imgur.com/JLz2bQ7.png "Wireframe for Tic-Tac-Toe Project")
+![alt text](https://i.imgur.com/dhqsEat.png "Wireframe for Tic-Tac-Toe Project")
 
 `As a video game user i would like to know how many games I won so I can know if I need to improve.
 As an efficiency user I would like to know how many moves I took every game so i can try to win in the least amount of moves as possible.
