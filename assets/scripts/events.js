@@ -4,7 +4,7 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
 
-const onSignUp = function () {
+const onSignUp = function (event) {
   event.preventDefault()
 
   const form = event.target
@@ -16,6 +16,18 @@ const onSignUp = function () {
     .catch(ui.onFailure)
 }
 
+const onSignIn = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.signIn(data)
+    .then(ui.onSignInSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
-  onSignUp
+  onSignUp,
+  onSignIn
 }
