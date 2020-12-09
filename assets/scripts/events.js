@@ -1,5 +1,7 @@
 'use strict'
 
+const api = require('./api')
+const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
 
 const onSignUp = function () {
@@ -8,12 +10,10 @@ const onSignUp = function () {
   const form = event.target
 
   const data = getFormFields(form)
-  console.log('successfully signed up')
-  console.log(data)
 
-  // api.signUp(data)
-  //   .then(ui.OnSignUpSuccess)
-  //   .catch(ui.onFailure)
+  api.signUp(data)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onFailure)
 }
 
 module.exports = {
