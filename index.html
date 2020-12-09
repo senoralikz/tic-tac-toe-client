@@ -16,7 +16,9 @@
 <body>
   <h1>Tic-Tac-Toe</h1>
   <p id="message"></p>
+
   <div class="unauthenticated">
+
     <form id="sign-up">
       <input placeholder="email" type="text" name="credentials[email]" />
       <input placeholder="create password" type="password" name="credentials[password]" />
@@ -29,15 +31,23 @@
       <input placeholder="password" type="password" name="credentials[password]" />
       <button type="submit">Sign in</button>
     </form>
+
   </div>
+
   <div class="authenticated">
+
     <form id="change-password">
       <input placeholder="old password" type="password" name="passwords[old]" />
       <input placeholder="new password" type="password" name="passwords[new]" />
       <button type="submit">Change Password</button>
     </form>
+
     <button id="sign-out" type="submit">Sign Out</button>
+    <br />
+    <button id="new-game" type="submit">Start New Game</button>
+
   </div>
+
 </body>
 
 </html>

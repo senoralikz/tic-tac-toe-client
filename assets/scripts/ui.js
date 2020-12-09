@@ -31,6 +31,10 @@ const onSignOutSuccess = function () {
   $('.authenticated').hide()
 }
 
+const onNewGameSuccess = function () {
+  $('#message').text('Started New Game!')
+}
+
 const onFailure = function (error) {
   $('#message').text('Failed with error: ' + error.responseJSON.message)
 }
@@ -40,5 +44,6 @@ module.exports = {
   onSignInSuccess,
   onChangePasswordSuccess,
   onSignOutSuccess,
+  onNewGameSuccess,
   onFailure
 }
