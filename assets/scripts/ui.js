@@ -14,6 +14,11 @@ const onSignInSuccess = function (response) {
   store.user = response.user
 }
 
+const onChangePasswordSuccess = function (response) {
+  $('#message').text('Successfully changed password!')
+  $('#change-password').trigger('reset')
+}
+
 const onFailure = function (error) {
   $('#message').text('Failed with error: ' + error.responseJSON.message)
 }
@@ -21,5 +26,6 @@ const onFailure = function (error) {
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
+  onChangePasswordSuccess,
   onFailure
 }

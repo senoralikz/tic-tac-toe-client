@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Tic-Tac-Toe</h1>
-      <p id="message"></p>
-      <div class="unauthenticated">
-      <form id="sign-up">
-        <input placeholder="email" type="text" name="credentials[email]"/>
-        <input placeholder="create password" type="password" name="credentials[password]"/>
-        <input placeholder="verify password" type="password" name="credentials[password_confirmation]"/>
-        <button type="submit">Sign up</button>
-      </form>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <form id="sign-in">
-        <input placeholder="email" type="text" name="credentials[email]"/>
-        <input placeholder="password" type="password" name="credentials[password]"/>
-        <button type="submit">Sign in</button>
-      </form>
-      </div>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  <p id="message"></p>
+  <div class="unauthenticated">
+    <form id="sign-up">
+      <input placeholder="email" type="text" name="credentials[email]" />
+      <input placeholder="create password" type="password" name="credentials[password]" />
+      <input placeholder="verify password" type="password" name="credentials[password_confirmation]" />
+      <button type="submit">Sign up</button>
+    </form>
+
+    <form id="sign-in">
+      <input placeholder="email" type="text" name="credentials[email]" />
+      <input placeholder="password" type="password" name="credentials[password]" />
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+  <div class="authenticated">
+    <form id="change-password">
+      <input placeholder="old password" type="password" name="passwords[old]" />
+      <input placeholder="new password" type="password" name="passwords[new]" />
+      <button type="submit">Change Password</button>
+    </form>
+    <button id="sign-out" type="submit">Sign Out</button>
+  </div>
+</body>
+
 </html>
