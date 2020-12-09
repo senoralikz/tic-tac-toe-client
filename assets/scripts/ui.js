@@ -12,6 +12,9 @@ const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
 
   store.user = response.user
+
+  $('.unauthenticated').hide()
+  $('.authenticated').show()
 }
 
 const onChangePasswordSuccess = function (response) {
@@ -21,7 +24,11 @@ const onChangePasswordSuccess = function (response) {
 
 const onSignOutSuccess = function () {
   $('#message').text('Signed Out Successfully!')
+
   store.user = null
+
+  $('.unauthenticated').show()
+  $('.authenticated').hide()
 }
 
 const onFailure = function (error) {
