@@ -20,4 +20,6 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   $('#new-game').on('click', authEvents.onNewGame)
+
+  $('data').on('click', authEvents.onUserMove)
 })

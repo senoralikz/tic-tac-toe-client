@@ -54,10 +54,19 @@ const onNewGame = function (event) {
     .catch(ui.onFailure)
 }
 
+const onUserMove = function (event) {
+  event.preventDefault()
+
+  let value
+
+  $('data')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onNewGame
+  onNewGame,
+  onUserMove
 }
