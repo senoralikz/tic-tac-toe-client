@@ -33,6 +33,7 @@ const onSignOutSuccess = function () {
 
 const onNewGameSuccess = function () {
   $('#message').text('Started New Game!')
+  $('#user-turn').text('Player X Turn')
 }
 
 const onFailure = function (error) {
