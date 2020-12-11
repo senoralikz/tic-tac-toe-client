@@ -2,19 +2,19 @@
 @import 'variables';
 
 .grid {
+  background-color: $game-board-background-color;
+  border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 75%;
-  background-color: $game-board-background-color;
-  border-radius: 12px;
 }
 
 .cell {
+  background-color: $tile-color;
   border: $game-border-color 5px;
+  border-radius: 12px;
   flex: 0 0 32%;
   height: 100px;
   margin: 5px;
-  background-color: $tile-color;
-  border-radius: 12px;
 }
