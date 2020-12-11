@@ -40,7 +40,7 @@ const signOut = function () {
   })
 }
 
-const newGame = function () {
+const newGame = function (response) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -50,11 +50,11 @@ const newGame = function () {
   })
 }
 
-const updateGame = function (game) {
+const updateGame = function (gameData) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.user._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
-    data: game,
+    data: gameData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }

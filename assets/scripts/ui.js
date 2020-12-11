@@ -31,12 +31,15 @@ const onSignOutSuccess = function () {
   $('.authenticated').hide()
 }
 
-const onNewGameSuccess = function () {
+const onNewGameSuccess = function (response) {
   $('#message').text('Started New Game!')
+  store.game = response.game
 }
 
-const onUpdateGameSuccess = function () {
+const onUpdateGameSuccess = function (response) {
   $('#user-turn').text('Y\'s turn!')
+
+  store.game = response.game
 }
 
 const onFailure = function (error) {
