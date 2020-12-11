@@ -21,5 +21,21 @@ $(() => {
 
   $('#new-game').on('click', authEvents.onNewGame)
 
-  $('data').on('click', authEvents.onUserMove)
+  $('#cell0').on('click', authEvents.onUserMove)
+
+  $('#cell1').on('click', authEvents.onUserMove)
+
+  $('#cell2').on('click', authEvents.onUserMove)
+
+  $('#cell3').on('click', authEvents.onUserMove)
+
+  $('#cell4').on('click', authEvents.onUserMove)
+
+  $('#cell5').on('click', authEvents.onUserMove)
+
+  $('#cell6').on('click', authEvents.onUserMove)
+
+  $('#cell7').on('click', authEvents.onUserMove)
+
+  $('#cell8').on('click', authEvents.onUserMove)
 })

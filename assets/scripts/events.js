@@ -54,12 +54,34 @@ const onNewGame = function (event) {
     .catch(ui.onFailure)
 }
 
-const onUserMove = function (event) {
+const onUserMove = function (userTurn) {
   event.preventDefault()
 
-  let value
+  const form = event.target
 
-  $('data')
+  const gameData = getFormFields(form)
+
+  const oLetterHTML = (`
+  <div>
+    <p>O</p>
+  </div>
+  `)
+
+  const xLetterHTML = (`
+  <div>
+    <p>X</p>
+  </div>
+  `)
+
+  if ($('.cell').html() === null) {
+    $('#user-turn').text('Tile already taken. Pick another tile.')
+  } else {
+    $('.cell').html(xLetterHTML)
+  }
+
+  api.updateGame(gameData)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onFailure)
 }
 
 module.exports = {

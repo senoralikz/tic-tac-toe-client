@@ -33,7 +33,10 @@ const onSignOutSuccess = function () {
 
 const onNewGameSuccess = function () {
   $('#message').text('Started New Game!')
-  $('#user-turn').text('Player X Turn')
+}
+
+const onUpdateGameSuccess = function () {
+  $('#user-turn').text('Y\'s turn!')
 }
 
 const onFailure = function (error) {
@@ -46,5 +49,6 @@ module.exports = {
   onChangePasswordSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
+  onUpdateGameSuccess,
   onFailure
 }
