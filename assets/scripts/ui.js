@@ -44,9 +44,9 @@ const onNewGameSuccess = function (response) {
 }
 
 const onUpdateGameSuccess = function (response) {
-  $('#user-turn').text('Y\'s turn!')
-
   store.game = response.game
+  console.log(store.game)
+  // $('#user-turn').text(value + '\'s turn')
 }
 
 const onFailure = function (error) {

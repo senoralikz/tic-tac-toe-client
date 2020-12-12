@@ -5,6 +5,15 @@ const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
 
 let value = 'X'
+const gameData = {
+  game: {
+    cell: {
+      index: null,
+      value: null
+    },
+    over: false
+  }
+}
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -61,31 +70,21 @@ const onUserMove = function (event) {
 
   const index = $(event.target).data('cellIndex')
 
-  let gameData
-
   if ($(event.target).html() === '') {
     $(event.target).html(`<h3>${value}</h3>`)
 
-    gameData = {
-      game: {
-        cell: {
-          index: index,
-          value: value
-        },
-        over: false
-      }
-    }
+    gameData.game.cell.index = index
+    gameData.game.cell.value = value
 
     if (value === 'X') {
       value = 'O'
     } else {
       value = 'X'
     }
+    $('#cell-occupied').html('')
   } else {
-    $('#cell-occupied').html('<p>Tile is already taken. Select another tile.</p>').delay(2000).fadeOut('slow')
+    $('#cell-occupied').html('<p>Tile is already taken. Select another tile.</p>')
   }
-
-  console.log(gameData.game.cell.value)
 
   api.updateGame(gameData)
     .then(ui.onUpdateGameSuccess)
@@ -98,5 +97,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onNewGame,
-  onUserMove
+  onUserMove,
+  gameData
 }
