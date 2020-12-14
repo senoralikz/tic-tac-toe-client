@@ -71,7 +71,7 @@ const onUserMove = function (event) {
     api.updateGame(globals.gameData)
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onFailure)
-  } else if ($(event.target).html() !== '') {
+  } else {
     $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
   }
 }
