@@ -3,17 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
-
-let value = 'X'
-const gameData = {
-  game: {
-    cell: {
-      index: null,
-      value: null
-    },
-    over: false
-  }
-}
+const globals = require('./global')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -70,23 +60,26 @@ const onUserMove = function (event) {
 
   const index = $(event.target).data('cellIndex')
 
-  if ($(event.target).html() === '') {
-    $(event.target).html(`<h3>${value}</h3>`)
+  let currentPlayer = true
 
-    gameData.game.cell.index = index
-    gameData.game.cell.value = value
+  while (currentPlayer === true) {
+    if ($(event.target).html() === '') {
+      $(event.target).html(`<h3>${globals.value}</h3>`)
 
-    if (value === 'X') {
-      value = 'O'
+      globals.gameData.game.cell.index = index
+      globals.gameData.game.cell.value = globals.value
+
+      $('#game-message').html('')
+      currentPlayer = false
     } else {
-      value = 'X'
+      $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
     }
-    $('#cell-occupied').html('')
-  } else {
-    $('#cell-occupied').html('<p>Tile is already taken. Select another tile.</p>')
   }
 
-  api.updateGame(gameData)
+  console.log(globals.gameData.game.cell.index)
+  console.log(globals.gameData.game.cell.value)
+
+  api.updateGame(globals.gameData)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onFailure)
 }
@@ -97,6 +90,5 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onNewGame,
-  onUserMove,
-  gameData
+  onUserMove
 }

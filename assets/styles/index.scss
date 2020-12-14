@@ -10,6 +10,10 @@
   width: 75%;
 }
 
+.inactive {
+  pointer-events: none;
+}
+
 .cell {
   background-color: $tile-color;
   border: $game-border-color 5px;
