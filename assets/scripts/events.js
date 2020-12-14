@@ -84,11 +84,20 @@ const onUserMove = function (event) {
     .catch(ui.onFailure)
 }
 
+const onShowGames = function (event) {
+  event.preventDefault()
+
+  api.showGames()
+    .then(ui.onShowGamesSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onNewGame,
-  onUserMove
+  onUserMove,
+  onShowGames
 }

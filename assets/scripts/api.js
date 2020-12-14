@@ -62,11 +62,22 @@ const updateGame = function (gameData) {
   })
 }
 
+const showGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   newGame,
-  updateGame
+  updateGame,
+  showGames
 }

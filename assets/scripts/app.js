@@ -22,4 +22,6 @@ $(() => {
   $('#new-game').on('click', authEvents.onNewGame)
 
   $('#game-board').on('click', authEvents.onUserMove)
+
+  $('#index-games').on('click', authEvents.onShowGames)
 })

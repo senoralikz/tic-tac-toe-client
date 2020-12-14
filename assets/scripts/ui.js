@@ -35,6 +35,7 @@ const onSignOutSuccess = function () {
 
   $('#user-turn').text('')
   $('#game-message').html('')
+  $('#display-games').html('')
 
   $('.unauthenticated').show()
   $('.authenticated').hide()
@@ -55,6 +56,24 @@ const onNewGameSuccess = function (response) {
   $('#user-turn').text(globals.value + '\'s turn')
 }
 
+const onShowGamesSuccess = function (response) {
+  $('#display-games').html(response.games.length + ' Games Played!')
+
+  // let gamesHTML = ''
+
+//   games.forEach(function (currentGame) {
+//     const currentGameHTML = (`
+//     <div>
+//       <p>Cells: ${currentGame.cells}</p>
+//       <p>Result: ${currentGame.over}</p>
+//       <p>Game ID: ${currentGame._id}</p>
+//     </div>
+//     `)
+//     gamesHTML += currentGameHTML
+//   })
+//   $('#display-games').html(gamesHTML)
+}
+
 const onUpdateGameSuccess = function (response) {
   store.game = response.game
   checkWin()
@@ -63,7 +82,7 @@ const onUpdateGameSuccess = function (response) {
     $('#game-board').addClass('inactive')
   } else {
     if (store.game.cells.every(value => value !== '') === true) {
-      $('#game-message').html('<p>Game Over! It\'s a draw!')
+      $('#game-message').html('<p>Game Over! It\'s a draw!</p>')
       $('#game-board').addClass('inactive')
     } else if (globals.value === 'X') {
       globals.value = 'O'
@@ -115,6 +134,7 @@ module.exports = {
   onChangePasswordSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
+  onShowGamesSuccess,
   onUpdateGameSuccess,
   onFailure
 }
