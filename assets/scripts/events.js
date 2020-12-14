@@ -60,28 +60,20 @@ const onUserMove = function (event) {
 
   const index = $(event.target).data('cellIndex')
 
-  let emptySpace = true
+  if ($(event.target).html() === '') {
+    $(event.target).html(`<h3>${globals.value}</h3>`)
 
-  while (emptySpace === true) {
-    if ($(event.target).html() === '') {
-      $(event.target).html(`<h3>${globals.value}</h3>`)
+    globals.gameData.game.cell.index = index
+    globals.gameData.game.cell.value = globals.value
 
-      globals.gameData.game.cell.index = index
-      globals.gameData.game.cell.value = globals.value
+    $('#game-message').html('')
 
-      $('#game-message').html('')
-      emptySpace = false
-    } else {
-      $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
-    }
+    api.updateGame(globals.gameData)
+      .then(ui.onUpdateGameSuccess)
+      .catch(ui.onFailure)
+  } else if ($(event.target).html() !== '') {
+    $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
   }
-
-  // console.log(globals.gameData.game.cell.index)
-  // console.log(globals.gameData.game.cell.value)
-
-  api.updateGame(globals.gameData)
-    .then(ui.onUpdateGameSuccess)
-    .catch(ui.onFailure)
 }
 
 const onShowGames = function (event) {
