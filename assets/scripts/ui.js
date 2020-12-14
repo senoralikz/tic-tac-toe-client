@@ -51,8 +51,8 @@ const onNewGameSuccess = function (response) {
   store.game = response.game
   globals.value = 'X'
   globals.gameData.game.over = false
-  console.log(globals.gameData)
-  console.log(store.game)
+  // console.log(globals.gameData)
+  // console.log(store.game)
   $('#user-turn').text(globals.value + '\'s turn')
 }
 
@@ -92,8 +92,8 @@ const onUpdateGameSuccess = function (response) {
       $('#user-turn').text(globals.value + '\'s turn')
     }
   }
-  console.log(store.game)
-  console.log(globals.gameData)
+  // console.log(store.game)
+  // console.log(globals.gameData)
 }
 
 const onFailure = function (error) {

@@ -76,8 +76,8 @@ const onUserMove = function (event) {
     }
   }
 
-  console.log(globals.gameData.game.cell.index)
-  console.log(globals.gameData.game.cell.value)
+  // console.log(globals.gameData.game.cell.index)
+  // console.log(globals.gameData.game.cell.value)
 
   api.updateGame(globals.gameData)
     .then(ui.onUpdateGameSuccess)
