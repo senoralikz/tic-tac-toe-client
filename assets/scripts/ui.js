@@ -58,20 +58,6 @@ const onNewGameSuccess = function (response) {
 
 const onShowGamesSuccess = function (response) {
   $('#display-games').html(response.games.length + ' Games Played!')
-
-  // let gamesHTML = ''
-
-//   games.forEach(function (currentGame) {
-//     const currentGameHTML = (`
-//     <div>
-//       <p>Cells: ${currentGame.cells}</p>
-//       <p>Result: ${currentGame.over}</p>
-//       <p>Game ID: ${currentGame._id}</p>
-//     </div>
-//     `)
-//     gamesHTML += currentGameHTML
-//   })
-//   $('#display-games').html(gamesHTML)
 }
 
 const onUpdateGameSuccess = function (response) {
@@ -84,6 +70,8 @@ const onUpdateGameSuccess = function (response) {
     if (store.game.cells.every(value => value !== '') === true) {
       $('#game-message').html('<p>Game Over! It\'s a draw!</p>')
       $('#game-board').addClass('inactive')
+      globals.gameData.game.over = true
+      store.game.over = true
     } else if (globals.value === 'X') {
       globals.value = 'O'
       $('#user-turn').text(globals.value + '\'s turn')
