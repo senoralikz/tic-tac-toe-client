@@ -60,9 +60,9 @@ const onUserMove = function (event) {
 
   const index = $(event.target).data('cellIndex')
 
-  let currentPlayer = true
+  let emptySpace = true
 
-  while (currentPlayer === true) {
+  while (emptySpace === true) {
     if ($(event.target).html() === '') {
       $(event.target).html(`<h3>${globals.value}</h3>`)
 
@@ -70,7 +70,7 @@ const onUserMove = function (event) {
       globals.gameData.game.cell.value = globals.value
 
       $('#game-message').html('')
-      currentPlayer = false
+      emptySpace = false
     } else {
       $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
     }
