@@ -1,12 +1,12 @@
 # Tic-Tac-Toe
 
 ### Technologies Used
-1. JavaScript
-2. HTML
-3. SCSS
-4. jQuery
-5. AJAX
-6. Shell
+- JavaScript
+- HTML
+- SCSS
+- jQuery
+- AJAX
+- Shell
 
 ### Development Process
 The goal of the application is to be able to perform the following:
