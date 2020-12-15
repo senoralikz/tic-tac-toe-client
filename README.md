@@ -19,15 +19,15 @@ The goal of the application is to be able to perform the following:
 - When a game is over nothing else can be added to the board
 - User must be able to see how many games they played
 - Unauthenticated user can not have access to authenticated functions such as change password or start new game
+- Have all forms clear on submit success
 
-There are also API requirements we must check to make sure the API we are working with is working. Below are the requests I made, using curl scripts, to ensure the API was working:
+The application also deals with an API. Below are requests I made to ensure the API was functioning properly:
 - POST /sign-up (sign up new user)
 - POST /sign-in (sign in existing user)
 - PATCH /change-password (change users password)
 - DELETE /sign-out (sign out user)
 - POST /games (create a new game)
 - GET /games (view number of games user played)
-- Have all forms clear on submit success
 
 Whenever I was stuck on a requirement I would check the terminal or browser console for the error message and head to the line of code specified and work my way back while console logging to find the code that is not performing how I expected and then proceed to correct it.
 
