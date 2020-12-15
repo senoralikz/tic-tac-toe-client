@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  color: $font-color;
+  font-family: 'Lobster', cursive;
+}
 
 .grid {
   background-color: $game-board-background-color;
