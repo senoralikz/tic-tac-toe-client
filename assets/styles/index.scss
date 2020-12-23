@@ -11,17 +11,20 @@ header {
   background-color: $font-color;
 }
 
-nav {
-  display: flex;
-}
-
 h1, .account-message {
   color: $tile-color;
 }
 
 h2 {
-  font-size: 60px;
-  text-align: center;
+  display: flex;
+  font-size: 150px;
+  justify-content: center;
+}
+
+h3 {
+  display: flex;
+  font-size: 150px;
+  justify-content: center;
 }
 
 .row {
@@ -31,7 +34,7 @@ h2 {
 .container {
   background-color: $font-color;
   border-radius: 12px;
-  width: 500px;
+  width: 700px;
 }
 
 .inactive {
@@ -41,9 +44,7 @@ h2 {
 .cell {
   background-color: $tile-color;
   border-radius: 12px;
-  height: 100px;
-  padding: 5px;
-  width: 500px;
+  height: 170px;
 }
 
 .cell:hover {
