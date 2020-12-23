@@ -14,38 +14,54 @@
 </head>
 
 <body>
-  <h1>Tic-Tac-Toe</h1>
-  <p id="message"></p>
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+    <p id="message"></p>
+    <nav>
+      <div class="unauthenticated">
+        <form id="sign-up">
+          <input placeholder="email" type="text" name="credentials[email]" />
+          <input placeholder="create password" type="password" name="credentials[password]" />
+          <input placeholder="confirm password" type="password" name="credentials[password_confirmation]" />
+          <button type="submit">Sign Up</button>
+        </form>
 
-  <div class="unauthenticated">
-    <form id="sign-up">
-      <input placeholder="email" type="text" name="credentials[email]" />
-      <input placeholder="create password" type="password" name="credentials[password]" />
-      <input placeholder="confirm password" type="password" name="credentials[password_confirmation]" />
-      <button type="submit">Sign Up</button>
-    </form>
+        <form id="sign-in">
+          <input placeholder="email" type="text" name="credentials[email]" />
+          <input placeholder="password" type="password" name="credentials[password]" />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
 
-    <form id="sign-in">
-      <input placeholder="email" type="text" name="credentials[email]" />
-      <input placeholder="password" type="password" name="credentials[password]" />
-      <button type="submit">Sign In</button>
-    </form>
+      <div class="authenticated">
+        <form id="change-password">
+          <input placeholder="old password" type="password" name="passwords[old]" />
+          <input placeholder="new password" type="password" name="passwords[new]" />
+          <button type="submit">Change Password</button>
+        </form>
+
+        <button id="new-game" type="submit">Start New Game</button>
+        <button id="index-games" type="submit">See Number of Games Played</button>
+        <button id="sign-out" type="submit">Sign Out</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="game-board" class="row">
+      <div data-cell-index='0' class="col-4 box cell"></div>
+      <div data-cell-index='1' class="col-4 box cell"></div>
+      <div data-cell-index='2' class="col-4 box cell"></div>
+      <div data-cell-index='3' class="col-4 box cell"></div>
+      <div data-cell-index='4' class="col-4 box cell"></div>
+      <div data-cell-index='5' class="col-4 box cell"></div>
+      <div data-cell-index='6' class="col-4 box cell"></div>
+      <div data-cell-index='7' class="col-4 box cell"></div>
+      <div data-cell-index='8' class="col-4 box cell"></div>
+    </div>
   </div>
 
-  <div class="authenticated">
-    <form id="change-password">
-      <input placeholder="old password" type="password" name="passwords[old]" />
-      <input placeholder="new password" type="password" name="passwords[new]" />
-      <button type="submit">Change Password</button>
-    </form>
-
-    <button id="sign-out" type="submit">Sign Out</button>
-    <br />
-    <button id="new-game" type="submit">Start New Game</button>
-    <br />
-    <button id="index-games" type="submit">See Number of Games Played</button>
-
-  <div id="game-board" class="grid inactive">
+  <!-- <div id="game-board" class="grid inactive">
     <div data-cell-index='0' class="cell"></div>
     <div data-cell-index='1' class="cell"></div>
     <div data-cell-index='2' class="cell"></div>
@@ -55,13 +71,12 @@
     <div data-cell-index='6' class="cell"></div>
     <div data-cell-index='7' class="cell"></div>
     <div data-cell-index='8' class="cell"></div>
-  </div>
+  </div> -->
   <br />
   <p id="user-turn"></p>
   <div id="game-message"></div>
   <br />
   <div id="display-games"></div>
-</div>
 
 </body>
 

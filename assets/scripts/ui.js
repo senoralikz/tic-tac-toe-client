@@ -18,7 +18,6 @@ const onSignInSuccess = function (response) {
 
   $('.unauthenticated').hide()
   $('.authenticated').show()
-  $('#game-board').hide()
 }
 
 const onChangePasswordSuccess = function (response) {
@@ -39,12 +38,13 @@ const onSignOutSuccess = function () {
 
   $('.unauthenticated').show()
   $('.authenticated').hide()
+  $('#game-board div').hide()
 }
 
 const onNewGameSuccess = function (response) {
   $('#message').text('Started New Game!')
   // $('#message').delay(2000).fadeOut('slow')
-  $('#game-board').show()
+  $('#game-board div').show()
   $('#game-board div').html('')
   $('#game-message').html('')
   $('#game-board').removeClass('inactive')

@@ -72,6 +72,7 @@ const onUserMove = function (event) {
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onFailure)
   } else {
+    $(event.target).addClass('.occupied:active')
     $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
   }
 }
