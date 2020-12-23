@@ -9,17 +9,29 @@ body {
 
 header {
   background-color: $font-color;
-  margin-bottom: 100 px;
 }
 
-h1, #message {
+nav {
+  display: flex;
+}
+
+h1, .account-message {
   color: $tile-color;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.row {
+  margin: 50px auto;
 }
 
 .container {
   background-color: $font-color;
   border-radius: 12px;
-  max-width: 800px;
+  width: 500px;
 }
 
 .inactive {
@@ -29,8 +41,9 @@ h1, #message {
 .cell {
   background-color: $tile-color;
   border-radius: 12px;
-  height: 70px;
+  height: 100px;
   padding: 5px;
+  width: 500px;
 }
 
 .cell:hover {

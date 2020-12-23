@@ -61,7 +61,7 @@ const onUserMove = function (event) {
   const index = $(event.target).data('cellIndex')
 
   if ($(event.target).html() === '') {
-    $(event.target).html(`<h3>${globals.value}</h3>`)
+    $(event.target).html(`<h2>${globals.value}</h2>`)
 
     globals.gameData.game.cell.index = index
     globals.gameData.game.cell.value = globals.value
