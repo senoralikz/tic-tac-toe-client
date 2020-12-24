@@ -38,7 +38,8 @@ const onSignOutSuccess = function () {
 
   $('.unauthenticated').show()
   $('.authenticated').hide()
-  $('#game-board div').hide()
+  $('#game-board').addClass('inactive')
+  $('#game-board div').html('')
 }
 
 const onNewGameSuccess = function (response) {
