@@ -32,6 +32,8 @@ h3 {
 }
 
 .row {
+  display: flex;
+  justify-content: space-evenly;
   margin: 50px auto;
   height: 50vw;
   padding: 2vw;
@@ -86,4 +88,22 @@ h3 {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media (max-width: 500px) {
+
+  .container {
+    background-color: $font-color;
+    border-radius: 12px;
+    height: 65vw;
+    max-width: 80vw;
+    box-shadow: -5px 5px 8px $drop-shadow-color;
+  }
+
+  .cell {
+    background-color: $tile-color;
+    border-radius: 12px;
+    height: 20vw;
+  }
+
 }
