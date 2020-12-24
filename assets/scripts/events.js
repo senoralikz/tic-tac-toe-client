@@ -62,6 +62,7 @@ const onUserMove = function (event) {
 
   if ($(event.target).html() === '') {
     $(event.target).html(`<h2>${globals.value}</h2>`)
+    $(event.target).addClass('occupied')
 
     globals.gameData.game.cell.index = index
     globals.gameData.game.cell.value = globals.value
@@ -72,7 +73,6 @@ const onUserMove = function (event) {
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onFailure)
   } else {
-    $(event.target).addClass('.occupied:active')
     $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
   }
 }

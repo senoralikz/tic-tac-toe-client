@@ -48,6 +48,7 @@ const onNewGameSuccess = function (response) {
   $('#game-board div').html('')
   $('#game-message').html('')
   $('#game-board').removeClass('inactive')
+  $('#game-board div').removeClass('occupied')
   store.game = response.game
   globals.value = 'X'
   globals.gameData.game.over = false
