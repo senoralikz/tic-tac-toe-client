@@ -106,4 +106,18 @@ h3 {
     height: 20vw;
   }
 
+  #user-turn, #move-message, #display-games {
+    font-size: 5.5vw;
+    margin-left: 30px;
+    text-shadow: -5px 5px 8px $drop-shadow-color;
+  }
+
+  h3 {
+    display: flex;
+    font-size: 9vw;
+    justify-content: center;
+    margin-top: 50px;
+    text-shadow: -5px 5px 8px $drop-shadow-color;
+  }
+
 }
