@@ -67,13 +67,13 @@ const onUserMove = function (event) {
     globals.gameData.game.cell.index = index
     globals.gameData.game.cell.value = globals.value
 
-    $('#game-message').html('')
+    $('#move-message').html('')
 
     api.updateGame(globals.gameData)
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onFailure)
   } else {
-    $('#game-message').html('<p>Tile is already taken. Select another tile.</p>')
+    $('#move-message').html('<p>Tile is already taken. Select another tile.</p>')
   }
 }
 

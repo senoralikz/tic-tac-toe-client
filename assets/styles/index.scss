@@ -9,7 +9,7 @@ body {
 
 header {
   background-color: $font-color;
-  box-shadow: 0 7px 5px $drop-shadow-color;
+  box-shadow: 0 5px 8px $drop-shadow-color;
 }
 
 h1, .account-message {
@@ -20,7 +20,7 @@ h2 {
   display: flex;
   font-size: 13vw;
   justify-content: center;
-  text-shadow: -5px 5px 4px $drop-shadow-color;
+  text-shadow: -5px 5px 8px $drop-shadow-color;
 }
 
 h3 {
@@ -28,18 +28,21 @@ h3 {
   font-size: 8vw;
   justify-content: center;
   margin-top: 50px;
-  text-shadow: -5px 5px 4px $drop-shadow-color;
+  text-shadow: -5px 5px 8px $drop-shadow-color;
 }
 
 .row {
   margin: 50px auto;
+  height: 50vw;
+  padding: 2vw;
 }
 
 .container {
   background-color: $font-color;
   border-radius: 12px;
+  height: 50vw;
   max-width: 50vw;
-  box-shadow: -10px 10px 5px $drop-shadow-color;
+  box-shadow: -5px 5px 8px $drop-shadow-color;
 }
 
 .inactive {
@@ -65,8 +68,8 @@ h3 {
 //   color: $font-color;
 // }
 
-#user-turn, #game-message, #display-games {
-  font-size: 50px;
+#user-turn, #move-message, #display-games {
+  font-size: 3.5vw;
   margin-left: 30px;
   text-shadow: -5px 5px 8px $drop-shadow-color;
 }

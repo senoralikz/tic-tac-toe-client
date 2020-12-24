@@ -33,7 +33,7 @@ const onSignOutSuccess = function () {
   store.user = null
 
   $('#user-turn').text('')
-  $('#game-message').html('')
+  $('#move-message').html('')
   $('#display-games').html('')
 
   $('.unauthenticated').show()
@@ -47,7 +47,7 @@ const onNewGameSuccess = function (response) {
   // $('#message').delay(2000).fadeOut('slow')
   $('#game-board div').show()
   $('#game-board div').html('')
-  $('#game-message').html('')
+  $('#move-message').html('')
   $('#game-board').removeClass('inactive')
   $('#game-board div').removeClass('occupied')
   store.game = response.game
@@ -66,20 +66,20 @@ const onUpdateGameSuccess = function (response) {
   store.game = response.game
   checkWin()
   if (store.game.over === true) {
-    $('#game-message').html(`<p>Game Over! ${globals.value} Wins!`)
+    $('#move-message').html(`<p>Game Over! ${globals.value} Wins!`)
     $('#game-board').addClass('inactive')
   } else {
     if (store.game.cells.every(value => value !== '') === true) {
-      $('#game-message').html('<p>Game Over! It\'s a draw!</p>')
+      $('#move-message').html('<p>Game Over! It\'s a draw!</p>')
       $('#game-board').addClass('inactive')
       globals.gameData.game.over = true
       store.game.over = true
     } else if (globals.value === 'X') {
       globals.value = 'O'
-      $('#user-turn').text(globals.value + '\'s turn')
+      $('#user-turn').html(`<p>${globals.value}'s turn</p>`)
     } else {
       globals.value = 'X'
-      $('#user-turn').text(globals.value + '\'s turn')
+      $('#user-turn').html(`<p>${globals.value}'s turn</p>`)
     }
   }
   // console.log(store.game)
