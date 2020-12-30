@@ -14,6 +14,7 @@ header {
 
 h1, .account-message {
   color: $tile-color;
+  margin-left: 5px;
 }
 
 h2 {
@@ -65,10 +66,28 @@ h3 {
   animation: shake 0.5s;
 }
 
-// #sign-up {
-//   background-color: $tile-color;
-//   color: $font-color;
+.btn {
+  margin: 5px;
+}
+
+.btn-primary {
+  background-color: $tile-color;
+  color: $font-color;
+  margin: 5px;
+}
+
+.unauthButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// .authButtons {
+//   display: flex;
 // }
+
+#change-pw, #sign-out {
+  float: right;
+}
 
 #user-turn, #move-message, #display-games {
   font-size: 3.5vw;
@@ -119,5 +138,16 @@ h3 {
     margin-top: 50px;
     text-shadow: -5px 5px 8px $drop-shadow-color;
   }
+
+  .authButtons {
+    display: flex;
+    font-size: 3vw;
+    width: 30%;
+  }
+
+  // #new-game, #index-games, #sign-out, #change-pw {
+  //   display: block;
+  //   font-size: 3vw;
+  // }
 
 }

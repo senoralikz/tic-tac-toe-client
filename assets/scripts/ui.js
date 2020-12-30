@@ -7,6 +7,7 @@ const onSignUpSuccess = function (response) {
   $('#message').text('Signed Up Successfully!')
   // $('#message').delay(2000).fadeOut('slow')
   $('#sign-up').trigger('reset')
+  $('#sign-up-modal').modal('hide')
 }
 
 const onSignInSuccess = function (response) {
@@ -16,6 +17,7 @@ const onSignInSuccess = function (response) {
 
   store.user = response.user
 
+  $('#sign-in-modal').modal('hide')
   $('.unauthenticated').hide()
   $('.authenticated').show()
 }
