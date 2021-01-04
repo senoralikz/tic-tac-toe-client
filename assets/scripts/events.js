@@ -14,7 +14,7 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.onSignUpSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onModalFailure)
 }
 
 const onSignIn = function (event) {
@@ -25,7 +25,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.onSignInSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onModalFailure)
 }
 
 const onChangePassword = function (event) {
@@ -36,7 +36,7 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .then(ui.onChangePasswordSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onModalFailure)
 }
 
 const onSignOut = function (event) {

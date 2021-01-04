@@ -4,15 +4,17 @@ const store = require('./store')
 const globals = require('./global')
 
 const onSignUpSuccess = function (response) {
-  $('#message').text('Signed Up Successfully!')
-  // $('#message').delay(2000).fadeOut('slow')
+  $('#message').html('<p>Signed Up Successfully!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
   $('#sign-up').trigger('reset')
   $('#sign-up-modal').modal('hide')
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text('Signed In Successfully!')
-  // $('#message').delay(2000).fadeOut('slow')
+  $('#message').html('<p>Signed In Successfully!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
   $('#sign-in').trigger('reset')
 
   store.user = response.user
@@ -23,14 +25,17 @@ const onSignInSuccess = function (response) {
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#message').text('Successfully changed password!')
-  // $('#message').delay(2000).fadeOut('slow')
+  $('#message').html('<p>Successfully Changed Password!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
   $('#change-password').trigger('reset')
+  $('#changePasswordModal').modal('hide')
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('Signed Out Successfully!')
-  // $('#message').delay(2000).fadeOut('slow')
+  $('#message').html('<p>Signed Out Successfully!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
 
   store.user = null
 
@@ -45,8 +50,9 @@ const onSignOutSuccess = function () {
 }
 
 const onNewGameSuccess = function (response) {
-  $('#message').text('Started New Game!')
-  // $('#message').delay(2000).fadeOut('slow')
+  $('#message').html('<p>Started New Game!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
   $('#game-board div').show()
   $('#game-board div').html('')
   $('#move-message').html('')
@@ -68,11 +74,11 @@ const onUpdateGameSuccess = function (response) {
   store.game = response.game
   checkWin()
   if (store.game.over === true) {
-    $('#move-message').html(`<p>Game Over! ${globals.value} Wins!`)
+    $('#user-turn').html(`<p>Game Over! ${globals.value} Wins!`)
     $('#game-board').addClass('inactive')
   } else {
     if (store.game.cells.every(value => value !== '') === true) {
-      $('#move-message').html('<p>Game Over! It\'s a draw!</p>')
+      $('#user-turn').html('<p>Game Over! It\'s a draw!</p>')
       $('#game-board').addClass('inactive')
       globals.gameData.game.over = true
       store.game.over = true
@@ -90,6 +96,14 @@ const onUpdateGameSuccess = function (response) {
 
 const onFailure = function (error) {
   $('#message').text('Failed with error: ' + error.responseJSON.message)
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
+}
+
+const onModalFailure = function (error) {
+  $('.modal-message').text('Failed with error: ' + error.responseJSON.message)
+  $('.modal-message').fadeIn()
+  $('.modal-message').delay(2000).fadeOut('slow')
 }
 
 const checkWin = function () {
@@ -128,5 +142,6 @@ module.exports = {
   onNewGameSuccess,
   onShowGamesSuccess,
   onUpdateGameSuccess,
-  onFailure
+  onFailure,
+  onModalFailure
 }
