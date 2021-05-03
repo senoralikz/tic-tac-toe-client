@@ -1,6 +1,13 @@
 # Tic-Tac-Toe
 
+### Description
+
+Simple tic-tac-toe game. Create account to keep track of games played. To test the app use the credentials below:  
+EMAIL: test@testing.com  
+PASSWORD: 123456
+
 ### Technologies Used
+
 - JavaScript
 - HTML
 - SCSS
@@ -9,7 +16,9 @@
 - Shell
 
 ### Development Process
+
 The goal of the application is to be able to perform the following:
+
 - Have a new user sign up
 - Have an existing user sign in
 - Have user be able to start a new game
@@ -22,6 +31,7 @@ The goal of the application is to be able to perform the following:
 - Have all forms clear on submit success
 
 The application also deals with an API. Below are requests I made to ensure the API was functioning properly:
+
 - POST /sign-up (sign up new user)
 - POST /sign-in (sign in existing user)
 - PATCH /change-password (change users password)
@@ -32,10 +42,12 @@ The application also deals with an API. Below are requests I made to ensure the 
 Whenever I was stuck on a requirement I would check the terminal or browser console for the error message and head to the line of code specified and work my way back while console logging to find the code that is not performing how I expected and then proceed to correct it.
 
 ### Unsolved Problems
+
 - Styling
 - View last 5 games played
 
 ### Wireframe and User Stories
+
 ![alt text](https://i.imgur.com/dhqsEat.png "Wireframe for Tic-Tac-Toe Project")
 
 1. As a video game user I would like to know how many games I won so I can know if I need to improve.
